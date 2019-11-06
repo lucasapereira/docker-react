@@ -3,7 +3,7 @@ FROM node:alpine as builder
 WORKDIR "/app"
 COPY package.json . 
 RUN npm install
-COPY . .
+COPY package*.json ./
 RUN npm run build
 
 #/app/build - tem os aquivos do frontend em produção
